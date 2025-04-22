@@ -1,8 +1,10 @@
 import { cn } from '@/lib/utils';
+
 import { navBar } from '@/types/navType/navType';
 import { AlignJustify, CarFront, Globe, UserRound, X } from 'lucide-react';
 
 import { useLocation } from 'react-router-dom';
+import RentInfo from './RentInfo/RentInfo';
 
 const Navbar = () => {
   const router = useLocation();
@@ -23,23 +25,34 @@ const Navbar = () => {
           {/* Navbar */}
           <div className="navbar items-center justify-between bg-gradient-to-r from-black to-transparent">
             {pathname == '/' && (
-              <div className="flex-none text-white">
-                <label
-                  htmlFor="my-drawer-3"
-                  aria-label="open sidebar"
-                  className="text-white"
-                >
-                  <AlignJustify
-                    className="cursor-pointer transition hover:scale-105"
-                    size={22}
-                  />
-                </label>
-              </div>
+              <>
+                <div className="flex-none text-white">
+                  <label
+                    htmlFor="my-drawer-3"
+                    aria-label="open sidebar"
+                    className="text-white"
+                  >
+                    <AlignJustify
+                      className="cursor-pointer transition hover:scale-105"
+                      size={22}
+                    />
+                  </label>
+                </div>
+                <div className="mx-2 flex-1 px-2">
+                  <img src="/logo/sixtWhite.svg" alt="logo" />
+                </div>
+              </>
             )}
 
-            <div className="mx-2 flex-1 px-2">
-              <img src="/logo/sixtWhite.svg" alt="logo" />
-            </div>
+            {pathname == '/selected-car' && (
+              <div className="flex items-center justify-between gap-10">
+                <div className="mx-2 flex-1 px-2">
+                  <img src="/logo/sixtWhite.svg" alt="logo" />
+                </div>
+
+                <RentInfo />
+              </div>
+            )}
 
             <div className="flex gap-5 font-bold text-white">
               <div className="flex items-center justify-center gap-2">
