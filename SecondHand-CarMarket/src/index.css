@@ -1,0 +1,42 @@
+@import 'tailwindcss';
+@plugin "daisyui";
+
+.dark {
+  background-color: aliceblue;
+}
+.locationSearchShadow {
+  box-shadow:
+    rgba(0, 0, 0, 0.14) 0px 4px 5px 0px,
+    rgba(0, 0, 0, 0.12) 0px 1px 10px 0px,
+    rgba(0, 0, 0, 0.2) 0px 2px 4px -1px;
+}
+
+.roboto-900 {
+  font-weight: 900;
+  font-size: 4.5rem;
+  line-height: 1;
+  font-family: 'Roboto Condensed', RobotoCondensedArial, sans-serif;
+}
+
+.clip-left {
+  clip-path: polygon(
+    100% 0px,
+    0.125rem calc(100% - 0.125rem),
+    100% calc(100% - 0.125rem),
+    100% 100%,
+    0px 100%,
+    0px calc(100% - 0.125rem),
+    calc(100% - 0.125rem) 0px
+  );
+}
+.clip-right {
+  clip-path: polygon(
+    0px 0px,
+    100% 0px,
+    100% 0.125rem,
+    0.125rem 100%,
+    0px 100%,
+    calc(100% - 0.125rem) 0.125rem,
+    0px 0.125rem
+  );
+}
